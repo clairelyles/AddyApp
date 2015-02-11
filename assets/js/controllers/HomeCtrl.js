@@ -31,8 +31,8 @@ addyApp.controller('HomeCtrl', ['$scope','$http','$modal', function($scope, $htt
     }).result.then(function(updatedConact) {
       console.log('modal saved: ', updatedConact);
     },function() {
-      alert('modal closed with cancel');
-    })
-  }
+      // alert('modal closed with cancel');
+    });
+  };
 
 }]);
