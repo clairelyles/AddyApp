@@ -7,6 +7,15 @@ addyApp.controller('HomeCtrl', ['$scope','$http','$modal', function($scope, $htt
       $scope.contact = data;
     }).error(function(err) {
       console.log('error in HomeCtrl');
-    })
+    });
+
+  $scope.deleteContact = function(idx) {
+    var contactId = $scope.contact[idx].id;
+    $http.delete('/.api/contact/'+contactId).success(function(data){
+      $scope.contact.splice(idx,1);
+    }).error(function(err) {
+      alert(err);
+    });
+  };
 
 }]);

@@ -1,6 +1,5 @@
 <div class="row">
   <div class="col-sm-10 col-sm-offset-1">
-    <h2>Addy's</h2>
     <table class="table">
       <thead>
         <td>
@@ -21,19 +20,19 @@
       </thead>
       <tbody class="table-striped" ng-repeat="contact in contact">
         <td>
-          <h3>{{contact.firstName}} {{contact.lastName}}</h3>
+          <h4>{{contact.firstName}} {{contact.lastName}}</h4>
         </td>
         <td>
-          <h3>{{contact.company}}</h3>
+          <h4>{{contact.company}}</h4>
         </td>
         <td class="text-center">
-          <button class="btn btn-success btn-sm"><span class="glyphicon glyphicon-camera"></span></button>
+          <a href="/contact/{{contact.id}}"><button class="btn btn-success btn-sm"><span class="glyphicon glyphicon-camera"></span></button></a>
         </td>
         <td class="text-center">
-          <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+          <button class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
         </td>
         <td class="text-center">
-           <button class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button>
+           <button ng-click="deleteContact($index)" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
         </td>
       </tbody>
     </table>

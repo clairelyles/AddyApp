@@ -9,4 +9,13 @@ addyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, 
       templateUrl: '/views/home.html',
       controller: 'HomeCtrl'
     })
+    .when('/contact/:id', {
+      templateUrl: '/views/contact/show.html',
+      controller: 'ContactShowCtrl'
+    })
+    .when('/contact/new', {
+      templateUrl: '/views/contact/new.html',
+      controller: 'ContactNewCtrl'
+    })
+
 }]);
