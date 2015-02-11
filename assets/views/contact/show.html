@@ -1,1 +1,24 @@
-<h2>{{contact.firstName}} {{contact.lastName}} <small>Contact Info</small></h2>
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+
+    <button ng-click="editContact($index)" class="btn btn-warning btn-sm pull-right"><span class="glyphicon glyphicon-pencil"></span></button>
+    <div class="row">
+      <h2>{{contact.firstName}} {{contact.lastName}}</h2>
+    </div>
+    <div class="row">
+      <p><strong>Email:</strong> {{contact.firstName}} {{contact.lastName}}</p>
+    </div>
+    <div class="row">
+      <p><strong>Company:</strong> {{contact.company}}</p>
+    </div>
+    <div class="row">
+      <p><strong>Address:</strong> {{contact.streetAddress}}, {{contact.city}} {{contact.state}}, {{contact.zip}} <small>Contact Info</small></p>
+    </div>
+    <div class="row">
+      <p><strong>Phone:</strong> {{contact.phone}}</p>
+    </div>
+    <div class="row">
+      <p><strong>Notes:</strong> {{contact.notes}}</p>
+    </div>
+  </div>
+</div>
