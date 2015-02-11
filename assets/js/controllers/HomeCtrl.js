@@ -18,4 +18,21 @@ addyApp.controller('HomeCtrl', ['$scope','$http','$modal', function($scope, $htt
     });
   };
 
+  $scope.editContact = function(idx) {
+    var contactIdx = idx;
+    $modal.open({
+      templateUrl: '/views/contact/editModal.html',
+      controller: 'ContactEditModalCtrl',
+      resolve: {
+        contact: function() {
+          return $scope.contact[contactIdx]
+        }
+      }
+    }).result.then(function(updatedConact) {
+      console.log('modal saved: ', updatedConact);
+    },function() {
+      alert('modal closed with cancel');
+    })
+  }
+
 }]);

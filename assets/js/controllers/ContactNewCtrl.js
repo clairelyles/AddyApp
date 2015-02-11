@@ -6,6 +6,7 @@ addyApp.controller('ContactNewCtrl', ['$scope', '$http', '$routeParams', '$locat
       firstName: $scope.firstName,
       lastName: $scope.lastName,
       email: $scope.email,
+      company: $scope.company,
       streetAddress: $scope.streetAddress,
       city: $scope.city,
       state: $scope.state,
@@ -20,6 +21,7 @@ addyApp.controller('ContactNewCtrl', ['$scope', '$http', '$routeParams', '$locat
         $scope.firstName='';
         $scope.lastName='';
         $scope.email='';
+        $scope.company='';
         $scope.streetAddress='';
         $scope.city='';
         $scope.state='';
