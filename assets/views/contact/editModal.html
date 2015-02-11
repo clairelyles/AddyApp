@@ -2,6 +2,7 @@
   <h3>Edit Contact</h3>
 </div>
 <div class="modal-body">
+  <div class='col-sm-6'>
     <div class='form-group'>
       <label>First Name</label>
       <input type='text' class='form-control' ng-model='firstName' placeholder='Jane'>
@@ -22,6 +23,8 @@
       <label>Street Address</label>
       <input type='text' class='form-control' ng-model='streetAddress' placeholder='123 Main St.'>
     </div>
+  </div>
+  <div class='col-sm-6'>
     <div class='form-group'>
       <label>City</label>
       <input type='text' class='form-control' ng-model='city' placeholder='Seattle'>
@@ -42,6 +45,7 @@
       <label>Notes</label>
       <textarea type='text' class='form-control' ng-model='notes' placeholder="Friend of Joe's"></textarea>
     </div>
+  </div>
 </div>
 <div class="modal-footer">
   <button ng-click="cancel()" class="btn btn-default">Cancel</button>
