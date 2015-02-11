@@ -1,5 +1,45 @@
-<div class='container' ng-app='AddyApp'>
-  <h1>Address Book</h1>
-  <hr>
-  <ng-view></ng-view>
+
+<!-- Ng-App -->
+<div ng-app='AddyApp'>
+
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-default" ng-controller="MainNavCtrl">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button ng-click="navCollapsed=!navCollapsed" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Addy App</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" collapse="navCollapsed" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <!-- toggle class -->
+          <li ng-class="{active: isActive('/about')}"><a href="/about">About</a></li>
+          <li ng-class="{active: isActive('/contact/new')}"><a href="/contact/new">Add New</a></li>
+        </ul>
+        <form ng-submit="search()" class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" ng-model="searchTerm" class="form-control" placeholder="Search" required>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class='container'>
+
+    <!-- Ng-View -->
+    <ng-view></ng-view>
+
+  </div>
+
 </div>
+
