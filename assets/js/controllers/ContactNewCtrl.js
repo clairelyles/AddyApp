@@ -15,7 +15,7 @@ addyApp.controller('ContactNewCtrl', ['$scope', '$http', '$routeParams', '$locat
       notes: $scope.notes
     };
 
-    $http.post('/.api/contact',data)
+    $http.post('/api/contact',data)
       .success(function(data) {
         $scope.alert='Your post has been created';
         $scope.firstName='';

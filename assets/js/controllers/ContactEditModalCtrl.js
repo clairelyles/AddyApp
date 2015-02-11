@@ -28,7 +28,7 @@ addyApp.controller('ContactEditModalCtrl', ['$scope', '$http', '$modalInstance',
       notes: $scope.notes
     };
 
-    $http.put('/.api/contact/'+contact.id,contactData)
+    $http.put('/api/contact/'+contact.id,contactData)
       .success(function(data){
         $modalInstance.close(data);
       })

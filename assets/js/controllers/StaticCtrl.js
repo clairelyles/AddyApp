@@ -1,0 +1,3 @@
+addyApp.controller('StaticCtrl', [function(){
+
+}])

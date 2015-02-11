@@ -1,13 +1,31 @@
-addyApp.controller('HomeCtrl', ['$scope','$http','$modal', function($scope, $http, $modal){
+addyApp.controller('HomeCtrl', ['$scope','$http','$modal', '$location', function($scope, $http, $modal, $location){
 
   $scope.contacts = [];
 
-  $http.get('/.api/contact')
-    .success(function(data) {
-      $scope.contact = data;
-    }).error(function(err) {
-      console.log('error in HomeCtrl');
-    });
+  var queryData = $location.search();
+  var searchTerm = queryData.q || false;
+
+  var req = {
+    url:'/api/contact',
+    params: {
+      'sort':'createdAt desc'
+    }
+  }
+
+  if (searchTerm) {
+    req.params.body = "%" + searchTerm + "%";
+  }
+
+  $http(req).success(function(data) {
+    $scope.contact = data;
+  })
+
+  // $http.get('/.api/contact')
+  //   .success(function(data) {
+  //     $scope.contact = data;
+  //   }).error(function(err) {
+  //     console.log('error in HomeCtrl');
+  //   });
 
   $scope.deleteContact = function(idx) {
     var contactId = $scope.contact[idx].id;
@@ -29,6 +47,7 @@ addyApp.controller('HomeCtrl', ['$scope','$http','$modal', function($scope, $htt
         }
       }
     }).result.then(function(updatedConact) {
+      $scope.contact[contactIdx] = updatedContact;
       console.log('modal saved: ', updatedConact);
     },function() {
       // alert('modal closed with cancel');

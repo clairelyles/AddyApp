@@ -2,7 +2,7 @@ addyApp.controller("ContactShowCtrl", ['$scope','$http', '$routeParams', '$locat
 
   var contactId = $routeParams.id;
 
-  $http.get("/.api/contact/"+contactId)
+  $http.get("/api/contact/"+contactId)
   .success(function(data){
     $scope.contact = data
   }).error(function(err) {

@@ -17,5 +17,9 @@ addyApp.config(['$routeProvider', '$locationProvider', function($routeProvider, 
       templateUrl: '/views/contact/show.html',
       controller: 'ContactShowCtrl'
     })
+    .when('/about',{
+      templateUrl: '/views/about.html',
+      controller: 'StaticCtrl'
+    })
 
 }]);

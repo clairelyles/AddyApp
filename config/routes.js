@@ -33,7 +33,13 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': "PagesController.index",
-  "get /[^.?]+?":"PagesController.index"
+
+  "get *":{
+    controller: "ContactController",
+    action: "index",
+    skipAssets: true,
+    skipRegex: /^\/api\/.*$/
+  }
 
   /***************************************************************************
   *                                                                          *
